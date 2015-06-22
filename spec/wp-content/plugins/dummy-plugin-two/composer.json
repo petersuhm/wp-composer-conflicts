@@ -1,0 +1,5 @@
+{
+    "require": {
+        "some-vendor/some-dependency": "2.0.0"
+    }
+}
