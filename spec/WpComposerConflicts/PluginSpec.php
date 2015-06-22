@@ -1,15 +1,22 @@
 <?php
 
-namespace spec\WpComposerConflicts;
+namespace {
+    function add_action($hook, $callback) {
+        return true;
+    }
+}
 
-use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
+namespace spec\WpComposerConflicts {
 
-class PluginSpec extends ObjectBehavior
-{
-    function it_is_initializable()
+    use PhpSpec\ObjectBehavior;
+    use Prophecy\Argument;
+
+    class PluginSpec extends ObjectBehavior
     {
-        $this->shouldHaveType('WpComposerConflicts\Plugin');
-        $this->init()->shouldReturn(null);
+        function it_is_initializable()
+        {
+            $this->shouldHaveType('WpComposerConflicts\Plugin');
+            $this->init()->shouldReturn(null);
+        }
     }
 }

@@ -13,6 +13,9 @@ class Plugin
      */
     public function init()
     {
-        // Intialize plugin here
+        add_action('admin_init', function() {
+            $scanner = new ComposerDependencyScanner();
+            var_dump($scanner->composerDotJsonFiles(WP_PLUGIN_DIR)); die();
+        });
     }
 }

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "this-should/not-be-included": "2.0.0"
+    }
+}

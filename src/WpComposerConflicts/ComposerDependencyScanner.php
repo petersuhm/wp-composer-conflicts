@@ -21,9 +21,13 @@ class ComposerDependencyScanner
         $directory = new RecursiveDirectoryIterator($path);
         $iterator = new RecursiveIteratorIterator($directory);
 
-        $composerJsonFiles = array_values(
+        $filterOutVendorFiles = function($file) {
+            return ! preg_match('/\/vendor\//', $file);
+        };
+
+        $composerJsonFiles = array_values(array_filter(array_values(
             iterator_to_array(new RegexIterator($iterator, '/composer\.json/'))
-        );
+        ), $filterOutVendorFiles));
 
         $mapToRelativePath = function($file) use ($path) {
             return str_replace($path, '', $file->getPathName());
