@@ -4,7 +4,7 @@ This plugin scans the composer.json files of your installed plugins in order to 
 
 More `README.md` coming soon. Until then, read [this](http://blog.wppusher.com/a-warning-about-using-composer-with-wordpress/) for context.
 
-## Tests
+### Tests
 
 ```bas
 $ php vendor/bin/phpspec run -f pretty
