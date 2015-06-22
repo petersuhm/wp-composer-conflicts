@@ -22,7 +22,7 @@ class ComposerDependencyScanner
         $iterator = new RecursiveIteratorIterator($directory);
 
         $composerJsonFiles = array_values(
-            iterator_to_array(new RegexIterator($iterator, '/composer\.json/i'))
+            iterator_to_array(new RegexIterator($iterator, '/composer\.json/'))
         );
 
         $mapToRelativePath = function($file) use ($path) {
