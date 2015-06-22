@@ -5,6 +5,7 @@ namespace WpComposerConflicts;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use RegexIterator;
+use WpComposerConflicts\Composer\ComposerDotJsonFile;
 
 /**
  * Class ComposerDependencyScanner
@@ -29,10 +30,10 @@ class ComposerDependencyScanner
             iterator_to_array(new RegexIterator($iterator, '/composer\.json/'))
         ), $filterOutVendorFiles));
 
-        $mapToRelativePath = function($file) use ($path) {
-            return str_replace($path, '', $file->getPathName());
+        $mapToComposerFileObjects = function($file) {
+            return ComposerDotJsonFile::fromFilePath($file->getPathName());
         };
 
-        return array_map($mapToRelativePath, $composerJsonFiles);
+        return array_map($mapToComposerFileObjects, $composerJsonFiles);
     }
 }
