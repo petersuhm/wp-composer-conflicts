@@ -1,0 +1,21 @@
+{
+    "name": "petersuhm/wp-composer-conflicts",
+    "description": "Scans the composer.json files of your installed plugins in order to find conflicting dependencies.",
+    "require-dev": {
+        "phpspec/phpspec": "^2.2@dev"
+    },
+    "license": "GNU GENERAL PUBLIC LICENSE",
+    "authors": [
+        {
+            "name": "Peter Suhm",
+            "email": "peter@suhm.dk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "WpComposerConflicts\\": "src/WpComposerConflicts/"
+        }
+    }
+}
