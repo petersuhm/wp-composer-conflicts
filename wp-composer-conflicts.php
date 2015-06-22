@@ -17,5 +17,7 @@ if ( ! defined('WPINC')) {
     die;
 }
 
+require __DIR__ . '/vendor/autoload.php';
+
 $plugin = new Plugin();
 $plugin->init();
