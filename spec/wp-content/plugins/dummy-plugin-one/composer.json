@@ -1,5 +1,6 @@
 {
     "require": {
-        "some-vendor/some-dependency": "1.0.0"
+        "some-vendor/some-dependency": "1.0.0",
+        "another-vendor/another-dependency": "1.5.0"
     }
 }

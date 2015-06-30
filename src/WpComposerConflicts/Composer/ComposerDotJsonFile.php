@@ -5,6 +5,7 @@ namespace WpComposerConflicts\Composer;
 class ComposerDotJsonFile
 {
     private $content;
+    private $filePath;
 
     private function __construct()
     {
@@ -15,6 +16,7 @@ class ComposerDotJsonFile
         $composerDotJsonFile = new ComposerDotJsonFile();
 
         $composerDotJsonFile->setContent(json_decode(file_get_contents($path), true));
+        $composerDotJsonFile->setFilePath($path);
 
         return $composerDotJsonFile;
     }
@@ -27,5 +29,20 @@ class ComposerDotJsonFile
     public function setContent($content)
     {
         $this->content = $content;
+    }
+
+    public function getFilePath()
+    {
+        return $this->filePath;
+    }
+
+    public function setFilePath($filePath)
+    {
+        $this->filePath = $filePath;
+    }
+
+    public function getDependencies()
+    {
+        return isset($this->content['require']) ? $this->content['require'] : null;
     }
 }
